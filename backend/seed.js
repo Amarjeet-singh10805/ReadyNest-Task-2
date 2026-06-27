@@ -10,8 +10,9 @@ const { v4: uuidv4 } = require('uuid');
 const fs = require('fs');
 const path = require('path');
 
-const DATA_DIR = process.env.DATA_DIR || path.join(__dirname, 'db');
-if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
+const DATA_DIR = (process.env.DATA_DIR && fs.existsSync(process.env.DATA_DIR))
+  ? process.env.DATA_DIR
+  : path.join(__dirname, 'db');
 const DB_PATH = path.join(DATA_DIR, 'campus.db');
 
 async function seed() {
