@@ -3,8 +3,9 @@ const path = require('path');
 const fs = require('fs');
 
 // Use DATA_DIR env for Render persistent disk, fallback to local db/ folder
-const DATA_DIR = process.env.DATA_DIR || path.join(__dirname);
-if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
+const DATA_DIR = fs.existsSync(process.env.DATA_DIR || '') 
+  ? process.env.DATA_DIR 
+  : path.join(__dirname);
 
 const DB_PATH = path.join(DATA_DIR, 'campus.db');
 
