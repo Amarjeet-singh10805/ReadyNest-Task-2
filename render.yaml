@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: CampusSync
+    runtime: node
+    buildCommand: cd frontend && npm install && npm run build && cd ../backend && npm install
+    startCommand: node backend/server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: JWT_SECRET
+        generateValue: true
+      - key: FRONTEND_URL
+        value: "*"
+      - key: DATA_DIR
+        value: /data
+    disk:
+      name: campus-db
+      mountPath: /data
+      sizeGB: 1
