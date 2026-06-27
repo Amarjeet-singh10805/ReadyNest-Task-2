@@ -19,33 +19,6 @@ A full-stack web application to help students manage their daily college activit
 
 ---
 
-## 🚀 Quick Start (Local)
-
-### Prerequisites
-- Node.js 18+
-
-### 1. Install dependencies
-```bash
-npm run install:all
-```
-
-### 2. Build the frontend
-```bash
-npm run build
-```
-
-### 3. Seed demo data
-```bash
-npm run seed
-```
-
-### 4. Start the server
-```bash
-npm start
-```
-
-Open **http://localhost:5000**
-
 **Demo accounts:**
 | Role    | Email                  | Password    |
 |---------|------------------------|-------------|
